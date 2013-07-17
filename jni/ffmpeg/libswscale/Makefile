@@ -1,5 +1,3 @@
-include $(SUBDIR)../config.mak
-
 NAME = swscale
 FFLIBS = avutil
 
@@ -18,5 +16,3 @@ OBJS-$(HAVE_VIS)           +=  sparc/yuv2rgb_vis.o
 TESTPROGS = colorspace swscale
 
 DIRS = bfin mlib ppc sparc x86
-
-include $(SUBDIR)../subdir.mak

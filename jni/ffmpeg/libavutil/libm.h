@@ -58,6 +58,8 @@
 #define log2f(x) ((float)log2(x))
 #endif /* HAVE_LOG2F */
 
+#if 0 /** for Android native build **/
+
 #if !HAVE_LRINT
 static av_always_inline av_const long int lrint(double x)
 {
@@ -92,5 +94,7 @@ static av_always_inline av_const float truncf(float x)
     return (x > 0) ? floor(x) : ceil(x);
 }
 #endif /* HAVE_TRUNCF */
+
+#endif /** for Android native build **/
 
 #endif /* AVUTIL_LIBM_H */

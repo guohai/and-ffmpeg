@@ -12,3 +12,23 @@ http://wenku.baidu.com/view/791dcd2bbd64783e09122bc4.html
 
 移植ffmpeg到安卓平台记录（动态库）http://zzhhui.i.sohu.com/blog/view/244819499.htm
 
+
+
+
+building with NDK
+
+1. modify and run config.sh
+modify the NDK variable based on yours
+NDK=/home/guohai/dev/a/android-ndk-r7
+PLATFORM=$NDK/platforms/android-14/arch-arm/
+PREBUILT=$NDK/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86
+
+2. modify and-ffmpeg/jni/ffmpeg/config.h
+diff /s4k3j/config.h /config.h
+-#define restrict restrict
++#define restrict
+
+3. delete static methods under and-ffmpeg/jni/ffmpeg/libavutil/libm.h
+
+4. execute ndk-build
+
